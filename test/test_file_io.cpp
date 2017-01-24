@@ -1,7 +1,5 @@
 #include "test_common.h"
 
-#include "cv_utils/cv_utils.h"
-
 TEST_CASE("load_color") {
 
     SECTION("Vec3b") {
@@ -48,8 +46,8 @@ TEST_CASE("load_grayscale") {
 TEST_CASE("load_binary") {
     Mat_<bool> mask = load_binary(assets_dir() + "/colors.png");
     REQUIRE(!mask(0, 0));
-    REQUIRE(!mask(1, 0));
-    REQUIRE(!mask(0, 1));
-    REQUIRE(!mask(1, 1));
+    REQUIRE(mask(1, 0));
+    REQUIRE(mask(0, 1));
+    REQUIRE(mask(1, 1));
     REQUIRE(mask(2, 1));
 }

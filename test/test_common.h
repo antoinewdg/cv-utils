@@ -7,7 +7,7 @@
 
 #include <catch.hpp>
 
-#include "cv_utils/common.h"
+#include "cv_utils/cv_utils.h"
 
 using namespace cvu;
 
