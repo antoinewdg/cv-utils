@@ -9,12 +9,14 @@ set(SOURCE_FILES
         include/cv_utils/common.h
         include/cv_utils/file_io.h
         include/cv_utils/gui.h
+        include/cv_utils/loops.h
         )
 
 set(TEST_FILES
         test/test_common.h
         test/test_file_io.cpp
         test/test_gui.cpp
+        test/test_loops.cpp
         )
 
 
@@ -34,12 +36,5 @@ add_executable(run_tests test/main.cpp ${SOURCE_FILES} ${TEST_FILES})
 FIND_PACKAGE(OpenCV 3.1 REQUIRED)
 INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
 set(TARGET_LIBS ${TARGET_LIBS} ${OpenCV_LIBS})
-
-find_package(Boost 1.36.0)
-if (Boost_FOUND)
-    include_directories(${Boost_INCLUDE_DIRS})
-    set(TARGET_LIBS ${TARGET_LIBS} ${Boost_LIBRARIES})
-endif ()
-
 
 TARGET_LINK_LIBRARIES(run_tests ${TARGET_LIBS})
