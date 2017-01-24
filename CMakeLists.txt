@@ -8,11 +8,13 @@ set(SOURCE_FILES
         include/cv_utils/cv_utils.h
         include/cv_utils/common.h
         include/cv_utils/file_io.h
+        include/cv_utils/gui.h
         )
 
 set(TEST_FILES
         test/test_common.h
         test/test_file_io.cpp
+        test/test_gui.cpp
         )
 
 
