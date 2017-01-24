@@ -37,6 +37,22 @@ TEST_CASE("for_each_pixel") {
 
         REQUIRE(actual == expected);
     }
+}
 
+
+TEST_CASE("for_each_patch") {
+    Mat_<uchar> image(5, 4);
+    std::vector<Vec2i> expected = {
+            Vec2i(1, 1), Vec2i(1, 2),
+            Vec2i(2, 1), Vec2i(2, 2),
+            Vec2i(3, 1), Vec2i(3, 2),
+    };
+
+    std::vector<Vec2i> actual;
+    for_each_patch<3>(image, [&actual](int i, int j) {
+        actual.emplace_back(i, j);
+    });
+
+    REQUIRE(actual == expected);
 
 }
