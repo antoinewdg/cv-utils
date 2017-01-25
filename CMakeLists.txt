@@ -10,6 +10,7 @@ set(SOURCE_FILES
         include/cv_utils/file_io.h
         include/cv_utils/gui.h
         include/cv_utils/loops.h
+        include/cv_utils/convenience.h
         )
 
 set(TEST_FILES
@@ -17,6 +18,7 @@ set(TEST_FILES
         test/test_file_io.cpp
         test/test_gui.cpp
         test/test_loops.cpp
+        test/test_convenience.cpp
         )
 
 
